@@ -1,35 +1,13 @@
 import React from "react";
+import "./form.scss";
 
-export default function Form() {
+export default function Form({ type, onAdd }) {
+  const title = type === "expense" ? "Přidat výdaj" : "Přidat příjem";
   return (
-    <form className="form">
-     <h2 className="form__title">Přidat novou položku</h2>
-      <input 
-        type="text" 
-        className="form__input" 
-        placeholder="název položky" 
-      />
-      <select defaultValue={""}>
-        <option>Jídlo</option>
-        <option>Bydlení</option>
-        <option>Doprava</option>
-        <option>Zábava</option>
-        <option>Investice</option>
-        <option>Ostatvní</option>
-      </select>
-      <input 
-        type="text" 
-        className="form__input" 
-        placeholder="Částka" 
-      />
-      <input 
-        type="text" 
-        className="form__input" 
-        placeholder="Poznámka" 
-      />
-      <button type="submit" className="form__submit">
-        Přidej položku
+    <div className={`form-container ${type}`}>
+      <button className="add-button" onClick={() => onAdd(type)} title={title}>
+        +
       </button>
-    </form>
+    </div>
   );
 }

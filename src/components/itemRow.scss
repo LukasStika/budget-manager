@@ -1,0 +1,82 @@
+$border:#e5e7eb; 
+$red:#ef4444; 
+$green:#10b981; 
+$blue:#3b82f6;
+
+.item-row {
+  display: flex;
+  align-items: center;
+  gap: 1px;         // mezera mezi poli
+  margin-bottom: 8px;
+  background-color: #e5e7eb2f;
+  border-radius: 14px;
+
+  .item-title {
+    flex: 2;         // název dostane víc prostoru
+    min-width: 150px;
+  }
+
+  .item-amount {
+    flex: 0 0 90px;  // fixní šířka pro částku
+    text-align: right;
+  }
+
+  .item-category {
+    flex: 1.5;       // kategorie střední šířka
+    min-width: 120px;
+    min-width: 0;
+  }
+
+
+  .item-delete {
+    flex: 0 0 36px;  // ikona delete fixně
+    border: 0;
+    background: transparent;
+    font-size: 18px;
+    font-weight: bolder;
+    cursor: pointer;
+    color: #e24c6f;
+
+    &:hover { color: #111827; }
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid $border;
+    border-radius: 8px;
+    font-size: 0.8rem;
+
+    &:focus { outline: 2px solid rgba($blue,.25); }
+  }
+
+  &.expense .item-title { 
+    border-left: 4px solid $red; 
+    padding-left: 8px;
+ }
+  &.income  .item-title {
+    border-left: 4px solid $green;
+    padding-left: 8px; }
+}
+
+/* Responzivita */
+@media (max-width: 900px) {
+  .item-row {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    gap: 6px;
+    padding: 10px;
+
+    .item-title, 
+    .item-amount, 
+    .item-category{
+      padding: 10px 0 10px ;
+    } 
+
+    .item-delete {
+      align-self:auto;
+    }
+  }
+}

@@ -1,9 +1,159 @@
-body {
-  background: #3e6791;
-  font-family: Arial, sans-serif;
+$app-bg:#f7f7f9; 
+$border:#e5e7eb; 
+$text:#1f2937; 
+$green:#10b981; 
+$red:#ef4444; 
+$blue:#3b82f6;
+
+body{
+    margin:0;
+    background:$app-bg;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    color:$text;
+}
+.app{
+    max-width:1200px;
+    margin:24px auto;
+    padding:0 16px;
+}
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+
+  img {
+    height: 60px;   
+  
+  }
 }
 
-.app {
-  padding: 20px;
-  color: #333;
+.grid{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    align-items:start;}
+
+.panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+
+    background:#fff;
+    border:1px solid $border;
+    border-radius:14px;
+    
+    padding:16px;
+    height: 405px;
+
+    h2{
+    margin:0 0 12px;
 }
+}
+
+.center{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background:#fff;
+    border:1px solid $border;
+    border-radius:14px;
+    padding:20px;
+    min-width: 200px;
+    min-height:220px;
+
+    .bg-summary{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width: 200px;
+  border-radius:9px;
+  margin-top: 10px;
+  padding-top: 10px;
+
+  &.pos{background-color:#10b98155;}
+  &.neg{background-color:#ef444449;}
+  
+
+     .balance-label{
+        font-size:18px;
+        margin-bottom:8px;
+    }
+     .balance{
+        font-size:25px;
+        font-weight:700;
+        text-align: center;
+        padding-bottom: 20px;
+        
+        &.pos{color:$green;}
+        &.neg{color:$red;}
+    }
+}
+}
+
+
+.list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    overflow-y:auto;
+    flex:1;
+}
+
+@media (max-width:1000px){
+  .grid{
+    flex-direction: column; 
+    align-items: center;}
+  .center{
+    order:-1;
+    margin-bottom:12px;}
+}
+
+
+.chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.donut {
+  --percent: 0%; // výchozí hodnota
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #ef4444 var(--percent),   // výdaje červeně
+    #3b82f6 var(--percent) 100% // příjmy modře
+  );
+  position: relative;
+  margin-bottom: 20px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #fff;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.label {
+  text-align: center;
+
+  .balance-text {
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+
+  .balance-value {
+    font-size: 24px;
+    color: #10b981;
+    font-weight: bold;
+  }
+}
+
+
+

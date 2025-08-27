@@ -1,0 +1,74 @@
+.investments {
+  margin-top: 20px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.04);
+  overflow: hidden;
+}
+
+.inv-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid #eef2f5;
+
+  h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .inv-total {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+
+    span { color: #6b7280; font-size: 14px; }
+    strong { color: #111827; font-weight: 700; }
+  }
+}
+
+.inv-empty {
+  padding: 18px 16px;
+  color: #6b7280;
+}
+
+.inv-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.inv-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+
+  thead th {
+    text-align: left;
+    padding: 12px 16px;
+    background: #f9fafb;
+    color: #374151;
+    font-weight: 600;
+    border-bottom: 1px solid #eef2f5;
+  }
+
+  tbody td, tfoot td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f2f4f7;
+  }
+
+  tfoot td {
+    background: #fbfcfe;
+    font-weight: 600;
+  }
+
+  .name { min-width: 160px; }
+  .num  { text-align: right; white-space: nowrap; }
+  .strong { color: #111827; }
+}
+
+/* mobil – hezké čitelné odsazení */
+@media (max-width: 640px) {
+  .inv-head { flex-direction: column; align-items: flex-start; gap: 6px; }
+}
