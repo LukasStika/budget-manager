@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/budget-manager/static/css/main.2f29dfb9.css",
+    "main.js": "/budget-manager/static/js/main.e46e7677.js",
+    "static/media/logo.png": "/budget-manager/static/media/logo.4f4ef2d8df549fa1040f.png",
+    "index.html": "/budget-manager/index.html",
+    "main.2f29dfb9.css.map": "/budget-manager/static/css/main.2f29dfb9.css.map",
+    "main.e46e7677.js.map": "/budget-manager/static/js/main.e46e7677.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2f29dfb9.css",
+    "static/js/main.e46e7677.js"
+  ]
+}
